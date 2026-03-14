@@ -1,5 +1,6 @@
 const prettierConfig = {
   singleQuote: true,
+  jsxSingleQuote: true,
   singleAttributePerLine: true,
 };
 
