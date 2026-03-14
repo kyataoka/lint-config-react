@@ -105,13 +105,6 @@ export const createEslintConfig = (options = {}) => {
         ],
       },
     },
-    {
-      files: ['*.stories.@(js|jsx|ts|tsx)'],
-      rules: {
-        'import/no-default-export': 'off',
-        'import/no-extraneous-dependencies': 'off',
-      },
-    },
 
     //unused-imports
     {
@@ -246,7 +239,7 @@ export const createEslintConfig = (options = {}) => {
     //storybook
     ...eslintPluginStorybook.configs['flat/recommended'],
     {
-      files: concatListNoDuplication(filesForStorybook),
+      files: filesForStorybook,
       rules: {
         'import/no-default-export': 'off',
         'import/no-extraneous-dependencies': 'off',
