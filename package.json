@@ -1,10 +1,35 @@
 {
   "name": "@kataokahiroki/lint-config-react",
   "version": "1.0.0",
+  "description": "Shared ESLint and Prettier configuration for React + TypeScript projects",
   "type": "module",
+  "license": "MIT",
+  "author": "kataokahiroki",
+  "keywords": [
+    "eslint",
+    "prettier",
+    "config",
+    "react",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "eslint.config.mjs",
+    "eslint.config.d.mts",
+    "prettier.config.mjs",
+    "prettier.config.d.mts"
+  ],
   "exports": {
-    "./eslint": "./eslint.config.mjs",
-    "./prettier": "./prettier.config.mjs"
+    "./eslint": {
+      "types": "./eslint.config.d.mts",
+      "default": "./eslint.config.mjs"
+    },
+    "./prettier": {
+      "types": "./prettier.config.d.mts",
+      "default": "./prettier.config.mjs"
+    }
   },
   "dependencies": {
     "@eslint/js": "^9.19.0",
