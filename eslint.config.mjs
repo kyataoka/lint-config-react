@@ -41,6 +41,15 @@ export const createEslintConfig = (options = {}) => {
     //common
     eslint.configs.recommended,
     tseslint.configs.recommended,
+    {
+      rules: {
+        '@typescript-eslint/consistent-type-imports': [
+          'error',
+          { fixStyle: 'inline-type-imports' },
+        ],
+        'no-console': 'warn',
+      },
+    },
 
     // react-refresh
     {
@@ -85,11 +94,6 @@ export const createEslintConfig = (options = {}) => {
                 pattern: 'react-dom',
                 group: 'external',
                 position: 'before',
-              },
-              {
-                pattern: '@material-ui/**',
-                group: 'external',
-                position: 'after',
               },
             ],
             pathGroupsExcludedImportTypes: ['react'],
@@ -248,9 +252,6 @@ export const createEslintConfig = (options = {}) => {
       },
     },
 
-    //prettier
-    eslintConfigPrettier,
-
     //storybook
     ...eslintPluginStorybook.configs['flat/recommended'],
     {
@@ -263,5 +264,8 @@ export const createEslintConfig = (options = {}) => {
 
     // overrides
     ...overrides,
+
+    //prettier (must be last to disable formatting rules from all above)
+    eslintConfigPrettier,
   ]);
 };
