@@ -1,5 +1,5 @@
 {
-  "name": "@kataokahiroki/lint-config",
+  "name": "@kataokahiroki/lint-config-react",
   "version": "1.0.0",
   "type": "module",
   "exports": {
