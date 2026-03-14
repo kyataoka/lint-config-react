@@ -1,7 +1,7 @@
 import eslint from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginFunctional from 'eslint-plugin-functional';
-import * as eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginImportX from 'eslint-plugin-import-x';
 import eslintPluginPreferArrowFunctions from 'eslint-plugin-prefer-arrow-functions';
 import eslintPluginReact from 'eslint-plugin-react';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
@@ -55,15 +55,7 @@ export const createEslintConfig = (options = {}) => {
 
     // import
     {
-      plugins: { import: eslintPluginImport },
-      settings: {
-        'import/resolver': {
-          typescript: {
-            alwaysTryTypes: true,
-            project: true,
-          },
-        },
-      },
+      plugins: { import: eslintPluginImportX },
       rules: {
         'import/no-cycle': 'error',
         'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
