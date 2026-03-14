@@ -1,4 +1,5 @@
 import type { Options } from 'prettier';
 
-declare const prettierConfig: Options;
-export default prettierConfig;
+export declare const createPrettierConfig: (
+  overrides?: Options,
+) => Options;

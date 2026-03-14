@@ -40,7 +40,15 @@ export default createEslintConfig({
 Create `prettier.config.mjs` in your project root:
 
 ```js
-export { default } from '@kataokahiroki/lint-config-react/prettier';
+import { createPrettierConfig } from '@kataokahiroki/lint-config-react/prettier';
+
+export default createPrettierConfig();
+```
+
+`createPrettierConfig()` accepts an optional overrides object:
+
+```js
+export default createPrettierConfig({ printWidth: 100 });
 ```
 
 ## Included Plugins
@@ -111,7 +119,15 @@ export default createEslintConfig({
 プロジェクトルートに `prettier.config.mjs` を作成します:
 
 ```js
-export { default } from '@kataokahiroki/lint-config-react/prettier';
+import { createPrettierConfig } from '@kataokahiroki/lint-config-react/prettier';
+
+export default createPrettierConfig();
+```
+
+`createPrettierConfig()` はオプションのオーバーライドオブジェクトを受け取ります:
+
+```js
+export default createPrettierConfig({ printWidth: 100 });
 ```
 
 ## 含まれるプラグイン
