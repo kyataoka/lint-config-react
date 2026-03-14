@@ -171,6 +171,8 @@ export const createEslintConfig = (options = {}) => {
         'functional/no-expression-statements': 'off',
         'functional/no-return-void': 'off',
         'functional/no-mixed-types': 'off',
+        'functional/no-throw-statements': 'off',
+        'functional/no-try-statements': 'off',
       },
     },
 
