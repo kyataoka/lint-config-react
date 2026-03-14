@@ -118,7 +118,14 @@ export const createEslintConfig = (options = {}) => {
     },
 
     //functional
-    eslintPluginFunctional.configs.recommended,
+    {
+      ...eslintPluginFunctional.configs.recommended,
+      files: concatListNoDuplication(
+        filesForReact,
+        filesForStorybook,
+        filesForUnitTest,
+      ),
+    },
     {
       plugins: { functional: eslintPluginFunctional },
       files: concatListNoDuplication(
@@ -185,7 +192,14 @@ export const createEslintConfig = (options = {}) => {
     },
 
     //react
-    eslintPluginReact.configs.flat.recommended,
+    {
+      ...eslintPluginReact.configs.flat.recommended,
+      files: concatListNoDuplication(
+        filesForReact,
+        filesForStorybook,
+        filesForUnitTest,
+      ),
+    },
     {
       plugins: { react: eslintPluginReact },
       files: concatListNoDuplication(
@@ -211,7 +225,14 @@ export const createEslintConfig = (options = {}) => {
         ],
       },
     },
-    eslintPluginReact.configs.flat['jsx-runtime'],
+    {
+      ...eslintPluginReact.configs.flat['jsx-runtime'],
+      files: concatListNoDuplication(
+        filesForReact,
+        filesForStorybook,
+        filesForUnitTest,
+      ),
+    },
 
     //react-hooks
     {
